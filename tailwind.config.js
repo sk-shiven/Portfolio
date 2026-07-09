@@ -2,15 +2,19 @@
 export default {
   content: [
     "./index.html",
-    "./src/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "#1A1A2E",
-        card: "#2D2D44",
-        primary: "#6C63FF",
-        secondary: "#00B4A6",
+        background: "oklch(15% 0.02 250)",
+        card: "oklch(20% 0.02 250)",
+        primary: "oklch(65% 0.15 250)",
+        secondary: "oklch(70% 0.15 160)",
+        muted: "oklch(25% 0.01 250)",
+      },
+      fontFamily: {
+        sans: ['"Geist Sans"', 'system-ui', 'sans-serif'],
       },
     },
   },

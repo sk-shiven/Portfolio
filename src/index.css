@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@fontsource/geist-sans/400.css";
+@import "@fontsource/geist-sans/500.css";
+@import "@fontsource/geist-sans/600.css";
+@import "@fontsource/geist-sans/700.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist Sans", system-ui, sans-serif;
+}
 
 :root {
   color-scheme: dark;
@@ -10,7 +16,27 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: oklch(98% 0.01 250);
+}
+
+/* Fluid Typography Utilities */
+@layer utilities {
+  .text-fluid-h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .text-fluid-h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .text-fluid-h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.2;
+  }
 }
 
 /* Custom Scrollbar */

@@ -35,27 +35,17 @@ const CardSwap = ({
   pauseOnHover = false,
   onCardClick,
   skewAmount = 6,
-  easing = 'elastic',
+  easing = 'power1.inOut',
   children
 }) => {
-  const config =
-    easing === 'elastic'
-      ? {
-          ease: 'elastic.out(0.6,0.9)',
-          durDrop: 2,
-          durMove: 2,
-          durReturn: 2,
-          promoteOverlap: 0.9,
-          returnDelay: 0.05
-        }
-      : {
-          ease: 'power1.inOut',
-          durDrop: 0.8,
-          durMove: 0.8,
-          durReturn: 0.8,
-          promoteOverlap: 0.45,
-          returnDelay: 0.2
-        };
+  const config = {
+    ease: 'power1.inOut',
+    durDrop: 0.8,
+    durMove: 0.8,
+    durReturn: 0.8,
+    promoteOverlap: 0.45,
+    returnDelay: 0.2
+  };
 
   const childArr = useMemo(() => Children.toArray(children), [children]);
   const refs = useMemo(

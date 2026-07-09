@@ -17,18 +17,16 @@ const ScrollRevealText = ({ text }) => {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'spring',
-        damping: 12,
-        stiffness: 100,
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1],
       },
     },
     hidden: {
       opacity: 0,
       y: 20,
       transition: {
-        type: 'spring',
-        damping: 12,
-        stiffness: 100,
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1],
       },
     },
   };
