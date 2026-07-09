@@ -1,0 +1,36 @@
+# Task List: Personal Portfolio & Prompt Library
+
+- [ ] **Phase 1: Project Setup & Foundation**
+    - [ ] Initialize Vite + React project
+    - [ ] Install dependencies (Tailwind CSS, Lucide React icons, etc.)
+    - [ ] Configure Tailwind theme (Deep Navy, Purple, Teal)
+    - [ ] Create basic layout with 3-tab navigation
+- [ ] **Phase 2: State Management & Data Schema**
+    - [ ] Define JSON schema for all 5 categories (Skills, Projects, Work, Ideas, Education)
+    - [ ] Implement `useLocalStorage` custom hook
+    - [ ] Create `PortfolioContext` for global state management
+- [ ] **Phase 3: Portfolio Tab UI**
+    - [ ] Build Stats Bar component
+    - [ ] Implement Search & Category Filter chips
+    - [ ] Build Vertical Timeline component
+    - [ ] Create Category Icon mapping
+- [ ] **Phase 4: Entry Modals & CRUD**
+    - [ ] Build generic Modal wrapper
+    - [ ] Implement "Add Entry" form for each of the 5 categories
+    - [ ] Build Entry Detail View with "Edit" and "Delete" actions
+    - [ ] Implement form validation and saving logic
+- [ ] **Phase 5: Prompt Library Tab**
+    - [ ] Build Prompt Category selector
+    - [ ] Implement variable input fields for selected templates
+    - [ ] Create Prompt Generator logic (string interpolation)
+    - [ ] Add "Copy to Clipboard" functionality
+    - [ ] Implement CRUD for Custom Prompts
+- [ ] **Phase 6: Settings Tab**
+    - [ ] Implement JSON Export/Import
+    - [ ] Implement CSV Export
+    - [ ] Create "Clear All Data" with confirmation modal
+- [ ] **Phase 7: Styling, Polish & Build**
+    - [ ] Refine Dark Mode aesthetics (gradients, glassmorphism)
+    - [ ] Add micro-animations (Framer Motion or CSS transitions)
+    - [ ] Final responsive testing
+    - [ ] Configure `vite-plugin-singlefile` and generate final `index.html`
