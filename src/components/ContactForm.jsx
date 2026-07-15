@@ -6,29 +6,29 @@ const ContactForm = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="flex flex-col gap-2 group">
           <label className="text-xs font-mono tracking-widest text-zinc-400 uppercase group-focus-within:text-[#C3FFFC] transition-colors">NAME</label>
-          <input 
-            type="text" 
+          <input
+            type="text"
             className="bg-transparent border-b border-zinc-700 py-4 text-white focus:outline-none focus:border-[#C3FFFC] transition-colors"
           />
         </div>
         <div className="flex flex-col gap-2 group">
           <label className="text-xs font-mono tracking-widest text-zinc-400 uppercase group-focus-within:text-[#C3FFFC] transition-colors">EMAIL</label>
-          <input 
-            type="email" 
+          <input
+            type="email"
             className="bg-transparent border-b border-zinc-700 py-4 text-white focus:outline-none focus:border-[#C3FFFC] transition-colors"
           />
         </div>
       </div>
       <div className="flex flex-col gap-2 group">
         <label className="text-xs font-mono tracking-widest text-zinc-400 uppercase group-focus-within:text-[#C3FFFC] transition-colors">MESSAGE</label>
-        <textarea 
+        <textarea
           rows="4"
           className="bg-transparent border-b border-zinc-700 py-4 text-white focus:outline-none focus:border-[#C3FFFC] transition-colors resize-none"
         />
       </div>
       <div className="pt-8">
-        <button 
-          type="button" 
+        <button
+          type="button"
           className="border border-white text-white px-12 py-5 font-mono text-sm tracking-widest uppercase hover:bg-[#C3FFFC] hover:text-black transition-colors duration-150 rounded-sm"
         >
           SEND ↗

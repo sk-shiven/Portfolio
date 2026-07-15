@@ -202,7 +202,7 @@ function App() {
                 </div>
 
                 <div className="w-full flex justify-center py-24 px-4 sm:px-8 border-t-2 border-zinc-900">
-                  {/* <ContactForm /> */}
+                  <ContactForm />
                 </div>
               </section>
             </main>
