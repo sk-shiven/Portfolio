@@ -16,7 +16,7 @@ const Hero = () => {
         style={{ y: imageY }}
       >
         <img
-          src="/dist/hero.png"
+          src="/hero.png"
           alt="Monochromatic halftone portrait"
           className="w-full h-full object-cover object-left-top grayscale"
         />
