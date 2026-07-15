@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useMotionValue, useMotionTemplate } fr
 
 const StatusFooter = () => {
   const { scrollYProgress } = useScroll();
-  
+
   // Transform scroll progress to a string like "000" to "100"
   const scrollString = useTransform(scrollYProgress, (val) => {
     return Math.min(100, Math.max(0, Math.round(val * 100))).toString().padStart(3, '0');
@@ -16,7 +16,7 @@ const StatusFooter = () => {
   const mouseYStr = useTransform(mouseY, (v) => Math.round(v).toString().padStart(4, '0'));
 
   const [time, setTime] = useState('');
-  const [activeSection, setActiveSection] = useState('01 - WORK');
+  const [activeSection, setActiveSection] = useState('01 - ARTICLES');
 
   useEffect(() => {
     // Track Mouse
@@ -36,11 +36,10 @@ const StatusFooter = () => {
 
     // Track Active Section (simple scroll spy for footer)
     const sections = [
-      { id: 'work', label: '01 - WORK' },
-      { id: 'articles', label: '02 - ARTICLES' },
-      { id: 'lab', label: '03 - LAB' },
-      { id: 'about', label: '04 - ABOUT' },
-      { id: 'contact', label: '05 - CONTACT' }
+      { id: 'articles', label: '01 - ARTICLES' },
+      { id: 'projects', label: '02 - PROJECTS' },
+      { id: 'about', label: '03 - ABOUT' },
+      { id: 'contact', label: '04 - CONTACT' }
     ];
 
     const observer = new IntersectionObserver(
@@ -65,7 +64,7 @@ const StatusFooter = () => {
       clearInterval(timeInterval);
       observer.disconnect();
     };
-  }, [mouseX, mouseY]);
+  }, []);
 
   const scrollText = useMotionTemplate`SCRL ${scrollString}`;
   const cursorText = useMotionTemplate`CRSR [${mouseXStr},${mouseYStr}]`;

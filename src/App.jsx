@@ -12,7 +12,6 @@ import Hero from './components/Hero';
 import LogoMarquee from './components/LogoMarquee';
 import ScrollRevealText from './components/ScrollRevealText';
 import ParallaxHeading from './components/ParallaxHeading';
-import ProjectCard from './components/ProjectCard';
 import ArticleRow from './components/ArticleRow';
 import LabCard from './components/LabCard';
 import ExperienceItem from './components/ExperienceItem';
@@ -43,69 +42,32 @@ function App() {
 
             <main className="relative z-10 pb-16">
 
-              {/* WORK SECTION */}
-              <ParallaxHeading word1="WORK" word2="FEATURED" metaLeft="01" metaRight="2023-2026" />
-              <section id="work" className="py-24 bg-background">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 flex flex-col gap-16">
-                  <ProjectCard
-                    category="E-Commerce" year="2025" title="Aura Store"
-                    description="A high-performance storefront with WebGL product viewers and seamless transitions."
-                    stats={[{ value: "300%", label: "Conversion" }, { value: "<1s", label: "Load Time" }]}
-                    bgColor="bg-zinc-900"
-                  />
-                  <ProjectCard
-                    category="Fintech" year="2024" title="Vault UI"
-                    description="Dark-mode native dashboard for institutional traders."
-                    stats={[{ value: "2M+", label: "Users" }, { value: "100%", label: "Uptime" }]}
-                    bgColor="bg-zinc-800"
-                  />
-                  <ProjectCard
-                    category="Web3" year="2024" title="Nexus Protocol"
-                    description="Decentralized exchange interface focusing on micro-interactions."
-                    stats={[{ value: "$5B", label: "Volume" }, { value: "0.1s", label: "Latency" }]}
-                    bgColor="bg-zinc-950"
-                  />
-                  <ProjectCard
-                    category="Agency" year="2023" title="Studio XYZ"
-                    description="Award-winning portfolio featuring custom cursor logic and infinite scroll."
-                    stats={[{ value: "4", label: "Awards" }, { value: "10k", label: "Visits" }]}
-                    bgColor="bg-zinc-900"
-                  />
-                </div>
-              </section>
-
               {/* ARTICLES SECTION */}
               <ParallaxHeading word1="ARTICLES" word2="RECENT" metaLeft="02" metaRight="WRITING" />
               <section id="articles" className="py-24 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 border-t border-zinc-900">
-                  <ArticleRow number="001" date="OCT 2025" readTime="5 MIN" title="Mastering Framer Motion Springs" subtitle="How to avoid 'bouncy' animations and achieve a premium feel." />
-                  <ArticleRow number="002" date="SEP 2025" readTime="8 MIN" title="The OKLCH Color Space" subtitle="Why I stopped using hex codes for design systems." />
-                  <ArticleRow number="003" date="AUG 2025" readTime="6 MIN" title="Building Custom Cursors" subtitle="Performance considerations and accessibility fallbacks." />
-                  <ArticleRow number="004" date="JUL 2025" readTime="12 MIN" title="WebGL for Frontend Devs" subtitle="A gentle introduction to shaders." />
-
-                  <ArticleRow disabled number="005" date="TBA" readTime="-" title="Advanced React Server Components" subtitle="Mental models for the new era." />
-                  <ArticleRow disabled number="006" date="TBA" readTime="-" title="CSS Grid Architectures" subtitle="Asymmetric layouts." />
-                  <ArticleRow disabled number="007" date="TBA" readTime="-" title="Micro-interactions Audit" subtitle="Evaluating 10 top agency sites." />
-                  <ArticleRow disabled number="008" date="TBA" readTime="-" title="Designing for Developers" subtitle="Creating DX-first interfaces." />
+                  <ArticleRow disabled number="001" date="TBA" readTime="-" title="ACT-R and SOAR models" subtitle="Cognitive Architecture" />
+                  <ArticleRow disabled number="002" date="TBA" readTime="-" title="Symbolic AI vs. Connectionist AI" subtitle="Cognitive Architecture" />
                 </div>
               </section>
 
               {/* LAB SECTION */}
-              <ParallaxHeading word1="LAB" word2="EXPERIMENTS" metaLeft="03" metaRight="PLAYGROUND" />
-              <section id="lab" className="py-24 bg-background px-4 sm:px-8">
+              <ParallaxHeading word1="PROJECTS" word2="SHOWCASE" metaLeft="03" metaRight="PLAYGROUND" />
+              <section id="projects" className="py-24 bg-background px-4 sm:px-8">
                 <div className="max-w-7xl mx-auto flex flex-col gap-4">
                   <LabCard />
                   <LabCard
                     number="002"
-                    title="ACTUAL-MCP"
-                    description="A modern context provider interface with real-time state visualization."
-                    tags={["TypeScript", "MCP", "WebSockets"]}
+                    title="POSIX-like Unix shell"
+                    description="An advanced interactive CLI shell supporting command execution, multi-stage pipelines, job control, and complex I/O redirection."
+                    tags={["Java", "Shell", "Operating System"]}
                     highlighted={false}
+                    githubLink='https://github.com/sk-shiven/CodeCrafters-Java-Shell'
                   />
-                  <div className="w-full border-t border-b border-zinc-900 py-6 px-8 flex justify-between items-center text-white hover:bg-white/[0.02] transition-colors cursor-pointer mt-8">
-                    <span className="font-mono text-xs md:text-sm tracking-widest uppercase truncate mr-4">ALL CODE : GITHUB.COM/TYPE0LABS-DEV</span>
+                  <a href="https://github.com/sk-shiven" target="_blank" rel="noreferrer" className="w-full border-t border-b border-zinc-900 py-6 px-8 flex justify-between items-center text-white hover:bg-white/[0.02] transition-colors cursor-pointer mt-8 block">
+                    <span className="font-mono text-xs md:text-sm tracking-widest uppercase truncate mr-4">ALL CODE : github.com/sk-shiven</span>
                     <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-zinc-400 flex items-center gap-2 whitespace-nowrap">VISIT <span className="text-xl leading-none">↗</span></span>
-                  </div>
+                  </a>
                 </div>
               </section>
 
@@ -133,20 +95,12 @@ function App() {
                       <div className="flex flex-col w-full">
                         <h3 className="font-mono text-xs tracking-widest text-zinc-600 uppercase mb-8">Experience & Education</h3>
                         <div className="flex flex-col mb-12">
-                          <ExperienceItem name="Type0 Labs" role="Senior Engineer" year="2024-PRESENT" />
-                          <ExperienceItem name="Vercel" role="Frontend Architect" year="2022-2024" />
-                          <ExperienceItem name="Google" role="Creative Developer" year="2020-2022" />
-                          <ExperienceItem name="Studio XYZ" role="Design Engineer" year="2019-2020" />
-                          <ExperienceItem name="MIT Media Lab" role="Research Fellow" year="2018-2019" />
-                          <ExperienceItem name="RISD" role="MFA Graphic Design" year="2016-2018" />
-                          <ExperienceItem name="Stanford" role="BS Computer Science" year="2012-2016" />
-                        </div>
+                          <ExperienceItem name="Unfitrd Media" role="Chief Article Writer" year="2023-2024" />
+                          <ExperienceItem name="E-Cell IIT-B" role="Eureka Junior Leader" year="2023" />
+                          <ExperienceItem name="Brand Bengaluru" role="Youth Ideathon Finalist" year="2022" />
+                          <ExperienceItem name="BITs Pilani" role="Bachelor's Computer Science" year="2025-2029" />
+                          <ExperienceItem name="Presidency Bangalore" role="Diploma in Non-Medical Sciences" year="2021-2025" />
 
-                        {/* Download Resume Button */}
-                        <div>
-                          <a href="#" className="inline-block border border-white rounded-full px-8 py-4 text-xs font-mono tracking-widest uppercase hover:bg-white hover:text-black transition-colors">
-                            DOWNLOAD RESUME/CV
-                          </a>
                         </div>
                       </div>
                     </div>
@@ -193,7 +147,7 @@ function App() {
               </section>
 
               {/* CONTACT SECTION */}
-              <ParallaxHeading word1="LET'S" word2="TALK" metaLeft="05" metaRight="CONTACT" />
+              <ParallaxHeading word1="LET'S" word2="TALK!" metaLeft="05" metaRight="CONTACT" />
               <section id="contact" className="min-h-[80vh] pt-32 flex flex-col items-center justify-center bg-background border-t border-zinc-900 w-full">
                 <div className="w-full flex flex-col">
                   <MegaContactLink title="EMAIL" href="mailto:shiven.kath.work@gmail.com" />
@@ -211,7 +165,7 @@ function App() {
           </>
         )}
       </div>
-    </SmoothScroll>
+    </SmoothScroll >
   );
 }
 

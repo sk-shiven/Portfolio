@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 
 const StaggeredNav = () => {
-  const links = ['WORK', 'ABOUT', 'SKILLS', 'CONTACT'];
+  const links = ['ABOUT', 'SKILLS', 'CONTACT'];
 
   const containerVariants = {
     hidden: { opacity: 0 },

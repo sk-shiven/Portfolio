@@ -2,16 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const logos = [
-  { name: 'Dell', url: 'https://cdn.simpleicons.org/dell/18181b' },
-  { name: 'Audi', url: 'https://cdn.simpleicons.org/audi/18181b' },
-  { name: 'Santander', url: 'https://cdn.simpleicons.org/santander/18181b' },
-  { name: 'Bradesco', url: 'https://cdn.simpleicons.org/bradesco/18181b' },
-  { name: 'Volkswagen', url: 'https://cdn.simpleicons.org/volkswagen/18181b' },
-  { name: 'Dell', url: 'https://cdn.simpleicons.org/dell/18181b' },
-  { name: 'Audi', url: 'https://cdn.simpleicons.org/audi/18181b' },
-  { name: 'Santander', url: 'https://cdn.simpleicons.org/santander/18181b' },
-  { name: 'Bradesco', url: 'https://cdn.simpleicons.org/bradesco/18181b' },
-  { name: 'Volkswagen', url: 'https://cdn.simpleicons.org/volkswagen/18181b' },
+  { name: 'ECell IIT-B', url: '/ecell_logo.png' },
+  { name: 'Unfitrd Media', url: '/unfltrd_logo.png' },
+  { name: 'Brand Bengaluru', url: '/Bengaluru Logo.png' },
+  { name: 'WWC Ngo', url: '/wwc_logo.png' },
+  { name: 'IIMUN', url: '/iimun_logo.png' },
+  { name: 'Trinity Nexus', url: '/tn_logo.png' },
+  { name: 'ECell IIT-B', url: '/ecell_logo.png' },
+  { name: 'Unfitrd Media', url: '/unfltrd_logo.png' },
+  { name: 'Brand Bengaluru', url: '/Bengaluru Logo.png' },
+  { name: 'WWC Ngo', url: '/wwc_logo.png' },
+  { name: 'IIMUN', url: '/iimun_logo.png' },
+  { name: 'Trinity Nexus', url: '/tn_logo.png' },
 ];
 
 const LogoMarquee = () => {
@@ -19,7 +21,7 @@ const LogoMarquee = () => {
     <section className="py-24 bg-zinc-200 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-8 mb-12 text-center">
         <h3 className="font-mono text-xs tracking-[0.2em] uppercase text-zinc-600">
-          SOME OF THE COMPANIES I'VE WORKED WITH
+          Milestones in My Career
         </h3>
       </div>
 

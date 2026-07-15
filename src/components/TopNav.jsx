@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const NAV_LINKS = [
-  { id: 'work', label: '01/WORK' },
-  { id: 'articles', label: '02/ARTICLES' },
-  { id: 'lab', label: '03/LAB' },
-  { id: 'about', label: '04/ABOUT' },
-  { id: 'contact', label: '05/CONTACT' },
+  { id: 'articles', label: '01/ARTICLES' },
+  { id: 'projects', label: '02/PROJECTS' },
+  { id: 'about', label: '03/ABOUT' },
+  { id: 'contact', label: '04/CONTACT' },
 ];
 
 const TopNav = () => {
@@ -40,8 +39,8 @@ const TopNav = () => {
       className="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex items-center justify-between mix-blend-difference text-white pointer-events-none"
     >
       {/* Logo */}
-      <div className="font-sans font-bold text-lg pointer-events-auto">
-        MJ
+      <div className="pointer-events-auto flex items-center justify-center">
+        <img src="/logo.png" alt="SK Logo" className="h-10 w-auto object-contain" />
       </div>
 
       {/* Nav Links */}
@@ -52,9 +51,8 @@ const TopNav = () => {
             <a
               key={link.id}
               href={`#${link.id}`}
-              className={`text-xs font-sans uppercase tracking-widest transition-colors ${
-                isActive ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'
-              }`}
+              className={`text-xs font-sans uppercase tracking-widest transition-colors ${isActive ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'
+                }`}
             >
               {link.label} {isActive && ']'}
             </a>
