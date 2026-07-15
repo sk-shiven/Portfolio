@@ -9,7 +9,7 @@ const TerminalHero = () => {
 > access granted.
 
 Hello, World.
-I'm a creative developer passionate about bold interfaces and immersive web experiences.
+I'm a CS Student exploring the ways how Engineered Intelligence interacts with Humans.
 `;
 
   useEffect(() => {
@@ -25,8 +25,8 @@ I'm a creative developer passionate about bold interfaces and immersive web expe
   return (
     <section className="h-screen w-full flex items-center justify-center bg-zinc-950 text-green-400 p-8 font-mono overflow-hidden relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-zinc-950/80 to-zinc-950 pointer-events-none" />
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}

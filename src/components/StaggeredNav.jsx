@@ -11,7 +11,7 @@ const StaggeredNav = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 1, // Wait for loader and hero
+        delayChildren: 1,
       }
     }
   };
@@ -22,7 +22,7 @@ const StaggeredNav = () => {
   };
 
   return (
-    <motion.nav 
+    <motion.nav
       variants={containerVariants}
       initial="hidden"
       animate="show"
@@ -31,7 +31,7 @@ const StaggeredNav = () => {
       <motion.div variants={itemVariants} className="font-mono text-xl tracking-tighter font-bold">
         S.K.
       </motion.div>
-      
+
       <ul className="hidden md:flex gap-8 font-mono text-sm tracking-widest">
         {links.map((link) => (
           <motion.li key={link} variants={itemVariants}>
