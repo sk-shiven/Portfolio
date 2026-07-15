@@ -11,14 +11,24 @@ const ContactForm = () => {
 
     const formData = new FormData(e.target);
 
+    formData.append("access_key", "3be84080-d7fe-4c94-b031-eeb49daed2c1");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
     try {
-      const response = await fetch('/__forms.html', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString(),
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: json
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setSubmitStatus('success');
         e.target.reset();
       } else {
@@ -36,20 +46,8 @@ const ContactForm = () => {
     <div className="flex flex-col gap-6 w-full max-w-4xl px-4 sm:px-8 py-16">
       <form
         className="flex flex-col gap-12 w-full"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
-        <input type="hidden" name="form-name" value="contact" />
-        
-        {/* Honeypot field */}
-        <p className="hidden">
-          <label>
-            Don't fill this out: <input name="bot-field" />
-          </label>
-        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="flex flex-col gap-2 group">
