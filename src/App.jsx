@@ -14,7 +14,7 @@ import ScrollRevealText from './components/ScrollRevealText';
 import ParallaxHeading from './components/ParallaxHeading';
 import ArticleRow from './components/ArticleRow';
 import LabCard from './components/LabCard';
-import ExperienceItem from './components/ExperienceItem';
+import Folder from './components/Folder';
 import FoundationItem from './components/FoundationItem';
 import CompetencyAccordion from './components/CompetencyAccordion';
 import ToolkitItem from './components/ToolkitItem';
@@ -22,6 +22,7 @@ import MegaContactLink from './components/MegaContactLink';
 import { Layers, Terminal, MonitorSmartphone, Cpu } from 'lucide-react';
 import ContactForm from './components/ContactForm';
 import SiteFooter from './components/SiteFooter';
+import CircularGallery from './components/CircularGallery';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -79,30 +80,57 @@ function App() {
                   {/* Top Grid: Media & Text */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start w-full mb-32">
                     {/* Media Placeholder */}
-                    <div className="w-full aspect-square bg-white rounded-[2rem] relative p-8 flex items-start justify-start shadow-2xl">
-                      <div className="text-[#C3FFFC] bg-zinc-900 p-2 rounded-full cursor-pointer hover:scale-110 transition-transform">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                      </div>
+                    <div className="w-full aspect-square rounded-[2rem] relative flex items-center justify-center overflow-hidden">
+                      <CircularGallery
+                        bend={3}
+                        textColor="#ffffff"
+                        borderRadius={0.05}
+                        scrollEase={0.02}
+                        fontUrl="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+                        font="normal 14px 'Special Elite'"
+                      />
                     </div>
 
                     {/* Text & Experience */}
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col w-full items-center lg:items-start">
                       <div className="mb-16">
-                        <ScrollRevealText text="I BUILD DIGITAL EXPERIENCES THAT LIVE AT THE INTERSECTION OF DESIGN AND ENGINEERING" />
+                        <ScrollRevealText text="I  build things to understand them. Then I write about what broke." />
                       </div>
 
-                      {/* Experience / Study List */}
-                      <div className="flex flex-col w-full">
-                        <h3 className="font-mono text-xs tracking-widest text-zinc-600 uppercase mb-8">Experience & Education</h3>
-                        <div className="flex flex-col mb-12">
-                          <ExperienceItem name="Unfitrd Media" role="Chief Article Writer" year="2023-2024" />
-                          <ExperienceItem name="E-Cell IIT-B" role="Eureka Junior Leader" year="2023" />
-                          <ExperienceItem name="Brand Bengaluru" role="Youth Ideathon Finalist" year="2022" />
-                          <ExperienceItem name="BITs Pilani" role="Bachelor's Computer Science" year="2025-2029" />
-                          <ExperienceItem name="Presidency Bangalore" role="Diploma in Non-Medical Sciences" year="2021-2025" />
+                    </div>
+                  </div>
 
-                        </div>
-                      </div>
+                  {/* Experience / Study List Centered */}
+                  <div className="flex flex-col w-full items-center mb-32">
+                    <h3 className="font-mono text-xs tracking-widest text-zinc-600 uppercase mb-8 text-center">Experience & Education</h3>
+                    <div className="flex flex-col items-center justify-center w-full" style={{ height: '300px', position: 'relative' }}>
+                      <Folder
+                        size={3}
+                        color="#27272a"
+                        className="mt-16"
+                        items={[
+                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
+                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">Presidency BLR</h4>
+                            <p className="text-[5px] text-zinc-700 leading-tight">Diploma in Non-Medical Sciences<br />2021-2025</p>
+                          </div>,
+                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
+                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">Brand Bengaluru</h4>
+                            <p className="text-[5px] text-zinc-700 leading-tight">Youth Ideathon Finalist<br />2022</p>
+                          </div>,
+                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
+                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">E-Cell IIT-B</h4>
+                            <p className="text-[5px] text-zinc-700 leading-tight">Eureka Junior Leader<br />2023</p>
+                          </div>,
+                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
+                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">Unfitrd Media</h4>
+                            <p className="text-[5px] text-zinc-700 leading-tight">Chief Article Writer<br />2023-2024</p>
+                          </div>,
+                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
+                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">BITs Pilani</h4>
+                            <p className="text-[5px] text-zinc-700 leading-tight">Bachelor's Computer Science<br />2025-2029</p>
+                          </div>
+                        ]}
+                      />
                     </div>
                   </div>
 

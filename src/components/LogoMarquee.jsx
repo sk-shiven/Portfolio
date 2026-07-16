@@ -14,6 +14,7 @@ const logos = [
   { name: 'WWC Ngo', url: '/wwc_logo.png' },
   { name: 'IIMUN', url: '/iimun_logo.png' },
   { name: 'Trinity Nexus', url: '/tn_logo.png' },
+  { name: 'Scaler', url: '/scaler_logo.png' }
 ];
 
 const LogoMarquee = () => {
