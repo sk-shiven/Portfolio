@@ -110,10 +110,6 @@ function App() {
                         className="mt-16"
                         items={[
                           <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
-                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">Presidency BLR</h4>
-                            <p className="text-[5px] text-zinc-700 leading-tight">Diploma in Non-Medical Sciences<br />2021-2025</p>
-                          </div>,
-                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
                             <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">Brand Bengaluru</h4>
                             <p className="text-[5px] text-zinc-700 leading-tight">Youth Ideathon Finalist<br />2022</p>
                           </div>,
@@ -122,12 +118,16 @@ function App() {
                             <p className="text-[5px] text-zinc-700 leading-tight">Eureka Junior Leader<br />2023</p>
                           </div>,
                           <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
-                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">Unfitrd Media</h4>
-                            <p className="text-[5px] text-zinc-700 leading-tight">Chief Article Writer<br />2023-2024</p>
-                          </div>,
-                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
                             <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">BITs Pilani</h4>
                             <p className="text-[5px] text-zinc-700 leading-tight">Bachelor's Computer Science<br />2025-2029</p>
+                          </div>,
+                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
+                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">Nlog-N</h4>
+                            <p className="text-[5px] text-zinc-700 leading-tight">Programming Club Member<br />2025</p>
+                          </div>,
+                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
+                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">Ascent - SST Fest</h4>
+                            <p className="text-[5px] text-zinc-700 leading-tight">Build Sprint and VC Pitch winner<br />2026</p>
                           </div>
                         ]}
                       />
