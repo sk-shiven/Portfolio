@@ -12,7 +12,7 @@ const Hero = () => {
     <section id="hero" className="relative min-h-[100dvh] w-full overflow-hidden bg-black flex items-center pt-24 pb-12">
       {/* Background/Right side portrait */}
       <motion.div
-        className="absolute top-0 right-0 w-[70%] md:w-[60%] h-[120%] opacity-60 md:opacity-100 pointer-events-none mix-blend-screen"
+        className="absolute top-24 right-0 w-[70%] md:w-[60%] h-[120%] opacity-60 md:opacity-100 pointer-events-none mix-blend-screen"
         style={{ y: imageY }}
       >
         <img
