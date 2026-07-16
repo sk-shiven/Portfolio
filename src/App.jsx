@@ -15,11 +15,11 @@ import ParallaxHeading from './components/ParallaxHeading';
 import ArticleRow from './components/ArticleRow';
 import LabCard from './components/LabCard';
 import Folder from './components/Folder';
-import FoundationItem from './components/FoundationItem';
+// import FoundationItem from './components/FoundationItem';
 import CompetencyAccordion from './components/CompetencyAccordion';
 import ToolkitItem from './components/ToolkitItem';
 import MegaContactLink from './components/MegaContactLink';
-import { Layers, Terminal, MonitorSmartphone, Cpu } from 'lucide-react';
+import { Layers, Terminal, Brain, Cpu } from 'lucide-react';
 import ContactForm from './components/ContactForm';
 import SiteFooter from './components/SiteFooter';
 import CircularGallery from './components/CircularGallery';
@@ -65,6 +65,31 @@ function App() {
                     highlighted={false}
                     githubLink='https://github.com/sk-shiven/CodeCrafters-Java-Shell'
                   />
+                  <LabCard
+                    number="003"
+                    title="CQRS and GDS Integration"
+                    description="Backend architecture built using the Command Query Responsibility Segregation (CQRS) pattern to decouple high-frequency writes from sub-millisecond read models."
+                    tags={["SQL Inno DB", "Apache Kafka", "Redis"]}
+                    highlighted={false}
+                    githubLink='https://github.com/sk-shiven/Airline-DB-CQRS-System'
+                  />
+                  <LabCard
+                    number="004"
+                    title="Data-Cleanup RL Agent"
+                    description="A containerized reinforcement learning environment designed to frame messy tabular data preparation as a sequential decision problem."
+                    tags={["Pydantic v2", "FastAPI", "Docker"]}
+                    highlighted={false}
+                    githubLink='https://github.com/sk-shiven/Data-Cleanup'
+                  />
+                  <LabCard
+                    number="005"
+                    title="Icebreaker"
+                    description="An interactive platform for social connection, featuring a crowdsourced library of icebreaker questions, a voting system to highlight community favorites, and AI-powered question generation."
+                    tags={["Typescript", "Vite React", "Gemini API"]}
+                    highlighted={false}
+                    githubLink='https://github.com/sk-shiven/Ice_Breaker_V1'
+                  />
+
                   <a href="https://github.com/sk-shiven" target="_blank" rel="noreferrer" className="w-full border-t border-b border-zinc-900 py-6 px-8 flex justify-between items-center text-white hover:bg-white/[0.02] transition-colors cursor-pointer mt-8 block">
                     <span className="font-mono text-xs md:text-sm tracking-widest uppercase truncate mr-4">ALL CODE : github.com/sk-shiven</span>
                     <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-zinc-400 flex items-center gap-2 whitespace-nowrap">VISIT <span className="text-xl leading-none">↗</span></span>
@@ -134,25 +159,14 @@ function App() {
                     </div>
                   </div>
 
-                  {/* Bottom Grid: Core Foundations */}
-                  <div className="w-full">
-                    <h3 className="font-mono text-xs tracking-widest text-zinc-600 uppercase mb-8">Core Foundations</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-                      <FoundationItem number="01" title="Engineering" description="Deep knowledge of React, Next.js, and modern TypeScript ecosystems to build scalable systems." />
-                      <FoundationItem number="02" title="Interaction" description="Fluid motion and physics-based animations using Framer Motion and GSAP." />
-                      <FoundationItem number="03" title="Design Systems" description="OKLCH-based color spaces, clamp-driven typography, and brutalist aesthetics." />
-                      <FoundationItem number="04" title="Performance" description="Optimized bundles, WebGL rendering, and zero-layout-shift architectural patterns." />
-                    </div>
-                  </div>
-
                   {/* Competencies Accordion */}
                   <div className="w-full mt-32">
                     <h3 className="font-mono text-xs tracking-widest text-zinc-600 uppercase mb-8">Core Competencies</h3>
                     <div className="flex flex-col">
-                      <CompetencyAccordion icon={Terminal} title="Frontend Architecture" />
-                      <CompetencyAccordion icon={MonitorSmartphone} title="Creative Development" />
-                      <CompetencyAccordion icon={Layers} title="Design Engineering" />
-                      <CompetencyAccordion icon={Cpu} title="Systems Integration" />
+                      <CompetencyAccordion icon={Terminal} title="System Architecture" />
+                      <CompetencyAccordion icon={Layers} title="Database Structuring" />
+                      <CompetencyAccordion icon={Cpu} title="AUI Integration" />
+                      <CompetencyAccordion icon={Brain} title="Agentic Memory Persistence Layers" />
                     </div>
                   </div>
 
@@ -160,14 +174,18 @@ function App() {
                   <div className="w-full mt-32">
                     <h3 className="font-mono text-xs tracking-widest text-zinc-600 uppercase mb-8">Toolkit</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/figma/ffffff" name="Figma" />
-                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/react/ffffff" name="React" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/python/ffffff" name="Python" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/pytorch/ffffff" name="PyTorch" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/tensorflow/ffffff" name="TensorFlow" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/postgresql/ffffff" name="SQL" />
                       <ToolkitItem iconUrl="https://cdn.simpleicons.org/nodedotjs/ffffff" name="Node.js" />
-                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/tailwindcss/ffffff" name="Tailwind" />
-                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/framer/ffffff" name="Framer" />
-                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/greensock/ffffff" name="GSAP" />
                       <ToolkitItem iconUrl="https://cdn.simpleicons.org/typescript/ffffff" name="TypeScript" />
-                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/vercel/ffffff" name="Vercel" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/react/ffffff" name="React" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/figma/ffffff" name="Figma" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/mongodb/ffffff" name="MongoDB" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/neo4j/ffffff" name="Neo4j" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/docker/ffffff" name="Docker" />
+                      <ToolkitItem iconUrl="https://cdn.simpleicons.org/kubernetes/ffffff" name="Kubernetes" />
                     </div>
                   </div>
 
