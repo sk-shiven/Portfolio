@@ -18,6 +18,21 @@ const darkenColor = (hex, percent) => {
   return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
 };
 
+const hexToRgba = (hex, alpha) => {
+  let color = hex.startsWith('#') ? hex.slice(1) : hex;
+  if (color.length === 3) {
+    color = color
+      .split('')
+      .map(c => c + c)
+      .join('');
+  }
+  const num = parseInt(color, 16);
+  const r = (num >> 16) & 0xff;
+  const g = (num >> 8) & 0xff;
+  const b = num & 0xff;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => {
   const maxItems = items.length || 1;
   const papers = items.length === 0 ? [null] : items;
@@ -36,6 +51,7 @@ const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => 
   }, []);
 
   const folderBackColor = darkenColor(color, 0.08);
+  const currentBackColor = open ? hexToRgba(folderBackColor, 0.25) : folderBackColor;
 
   const papersColors = Array.from({ length: maxItems }, (_, i) => {
     const percent = 0.15 * (1 - (i / (maxItems - 1 || 1)));
@@ -85,9 +101,11 @@ const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => 
     const cardHeightFactor = 80 - (index * (10 / (maxItems - 1 || 1)));
 
     if (isMobile) {
-      // 2-column grid layout for mobile viewports
-      const col = index === 4 ? 0.5 : index % 2; // Center the last card
-      const row = Math.floor(index / 2); // 0, 1, 2
+      // 2-column grid layout for mobile viewports (generic for any maxItems)
+      const isLastRowSingle = (maxItems % 2 !== 0) && (index === maxItems - 1);
+      const col = isLastRowSingle ? 0.5 : index % 2;
+      const row = Math.floor(index / 2);
+      const totalRows = Math.ceil(maxItems / 2);
 
       // Horizontal spacing (relative to folder center)
       let targetCenterX_folder = 0;
@@ -95,10 +113,8 @@ const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => 
       if (col === 1) targetCenterX_folder = 55;
       if (col === 0.5) targetCenterX_folder = 0;
 
-      // Vertical spacing (spread cards out upwards)
-      let targetY_folder = -10; // Row 2 (centered last item)
-      if (row === 0) targetY_folder = -140; // Row 0 (first two items)
-      if (row === 1) targetY_folder = -75;  // Row 1 (middle two items)
+      // Vertical spacing: row 0 is top, last row is bottom (closer to folder opening)
+      const targetY_folder = -10 - (totalRows - 1 - row) * 65;
 
       const targetX_folder = targetCenterX_folder - cardWidthFactor / 2;
 
@@ -165,12 +181,12 @@ const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => 
         aria-label={open ? 'Close folder' : 'Open folder'}
       >
         <div
-          className="relative w-[100px] h-[80px] rounded-tl-0 rounded-tr-[10px] rounded-br-[10px] rounded-bl-[10px]"
-          style={{ backgroundColor: folderBackColor }}
+          className="relative w-[100px] h-[80px] rounded-tl-0 rounded-tr-[10px] rounded-br-[10px] rounded-bl-[10px] transition-colors duration-300"
+          style={{ backgroundColor: currentBackColor }}
         >
           <span
-            className="absolute z-0 bottom-[98%] left-0 w-[30px] h-[10px] rounded-tl-[5px] rounded-tr-[5px] rounded-bl-0 rounded-br-0"
-            style={{ backgroundColor: folderBackColor }}
+            className="absolute z-0 bottom-[98%] left-0 w-[30px] h-[10px] rounded-tl-[5px] rounded-tr-[5px] rounded-bl-0 rounded-br-0 transition-colors duration-300"
+            style={{ backgroundColor: currentBackColor }}
           ></span>
           {papers.map((item, i) => {
             const widthStr = `${70 + (i * (20 / (maxItems - 1 || 1)))}%`;
@@ -207,6 +223,7 @@ const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => 
             style={{
               backgroundColor: color,
               borderRadius: '5px 10px 10px 10px',
+              opacity: open ? 0.25 : 1,
               ...(open && { transform: 'skew(15deg) scaleY(0.6)' })
             }}
           ></div>
@@ -216,6 +233,7 @@ const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => 
             style={{
               backgroundColor: color,
               borderRadius: '5px 10px 10px 10px',
+              opacity: open ? 0.25 : 1,
               ...(open && { transform: 'skew(-15deg) scaleY(0.6)' })
             }}
           ></div>

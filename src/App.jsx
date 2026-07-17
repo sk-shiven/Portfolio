@@ -151,6 +151,10 @@ function App() {
                             <p className="text-[5px] text-zinc-700 leading-tight">Programming Club Member<br />2025</p>
                           </div>,
                           <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
+                            <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">The Hustle Challenge</h4>
+                            <p className="text-[5px] text-zinc-700 leading-tight">Runner up<br />2025</p>
+                          </div>,
+                          <div className="p-2 w-full h-full flex flex-col items-center justify-center text-center">
                             <h4 className="text-zinc-900 font-bold text-[7px] uppercase mb-1 tracking-wider">Ascent - SST Fest</h4>
                             <p className="text-[5px] text-zinc-700 leading-tight">Build Sprint and VC Pitch winner<br />2026</p>
                           </div>
