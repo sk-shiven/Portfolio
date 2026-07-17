@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const darkenColor = (hex, percent) => {
   let color = hex.startsWith('#') ? hex.slice(1) : hex;
@@ -24,6 +24,16 @@ const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => 
 
   const [open, setOpen] = useState(false);
   const [paperOffsets, setPaperOffsets] = useState(Array.from({ length: maxItems }, () => ({ x: 0, y: 0 })));
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const folderBackColor = darkenColor(color, 0.08);
 
@@ -66,12 +76,38 @@ const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => 
     '--folder-back-color': folderBackColor
   };
 
-  const scaleStyle = { transform: `scale(${size})` };
+  const currentSize = isMobile ? size * 0.6 : size;
+  const scaleStyle = { transform: `scale(${currentSize})` };
 
   const getOpenTransform = index => {
     // Width and height factors (as percentages of folder width/height)
     const cardWidthFactor = 70 + (index * (20 / (maxItems - 1 || 1)));
     const cardHeightFactor = 80 - (index * (10 / (maxItems - 1 || 1)));
+
+    if (isMobile) {
+      // 2-column grid layout for mobile viewports
+      const col = index === 4 ? 0.5 : index % 2; // Center the last card
+      const row = Math.floor(index / 2); // 0, 1, 2
+
+      // Horizontal spacing (relative to folder center)
+      let targetCenterX_folder = 0;
+      if (col === 0) targetCenterX_folder = -55;
+      if (col === 1) targetCenterX_folder = 55;
+      if (col === 0.5) targetCenterX_folder = 0;
+
+      // Vertical spacing (spread cards out upwards)
+      let targetY_folder = -10; // Row 2 (centered last item)
+      if (row === 0) targetY_folder = -140; // Row 0 (first two items)
+      if (row === 1) targetY_folder = -75;  // Row 1 (middle two items)
+
+      const targetX_folder = targetCenterX_folder - cardWidthFactor / 2;
+
+      const x = (targetX_folder / cardWidthFactor) * 100;
+      const y = (targetY_folder / cardHeightFactor) * 100;
+
+      // 0 degrees rotation to make the text in the grid fully readable
+      return `translate(${x}%, ${y}%) rotate(0deg)`;
+    }
 
     if (maxItems === 1) {
       const targetX_folder = -cardWidthFactor / 2;

@@ -74,7 +74,7 @@ const StatusFooter = () => {
       {/* Left: Scroll & Cursor */}
       <div className="flex gap-6 w-1/3">
         <motion.span>{scrollText}</motion.span>
-        <motion.span>{cursorText}</motion.span>
+        <motion.span className="hidden md:inline-block">{cursorText}</motion.span>
       </div>
 
       {/* Center: Active Section */}
@@ -84,7 +84,7 @@ const StatusFooter = () => {
 
       {/* Right: Theme & Time */}
       <div className="w-1/3 text-right flex justify-end gap-6">
-        <span>THEME #C3FFFC</span>
+        <span className="hidden md:inline-block">THEME #C3FFFC</span>
         <span>[{time}]</span>
       </div>
     </footer>

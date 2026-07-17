@@ -12,7 +12,7 @@ const Hero = () => {
     <section id="hero" className="relative min-h-[100dvh] w-full overflow-hidden bg-black flex items-center pt-24 pb-12">
       {/* Background/Right side portrait */}
       <motion.div
-        className="absolute top-24 right-0 w-[70%] md:w-[60%] h-[120%] opacity-60 md:opacity-100 pointer-events-none mix-blend-screen"
+        className="absolute bottom-0 right-0 top-auto md:top-24 md:bottom-auto w-[85%] sm:w-[70%] md:w-[60%] h-[70%] md:h-[120%] opacity-30 md:opacity-100 pointer-events-none mix-blend-screen"
         style={{ y: imageY }}
       >
         <img
@@ -30,7 +30,7 @@ const Hero = () => {
           <p className="font-mono text-sm tracking-[0.25em] text-zinc-400 uppercase">
             CS & AI Student
           </p>
-          <p className="mt-4 text-zinc-500 font-sans max-w-sm text-sm leading-relaxed">
+          <p className="mt-4 text-zinc-400 md:text-zinc-500 font-sans max-w-sm text-sm leading-relaxed">
             I'm a CS Student exploring the ways how Engineered Intelligence interacts with Humans. <br /> Engineers build for users. my users are ai agents.
           </p>
         </div>

@@ -62,9 +62,14 @@ const TopNav = () => {
 
       {/* Get In Touch Button */}
       <div className="pointer-events-auto">
-        <button className="bg-white text-black px-5 py-2 rounded-full text-xs font-sans font-semibold uppercase tracking-wider hover:bg-zinc-200 transition-colors">
+        <a
+          href="https://linktr.ee/sk_shiven"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-white text-black px-5 py-2 rounded-full text-xs font-sans font-semibold uppercase tracking-wider hover:bg-zinc-200 transition-colors"
+        >
           Get In Touch
-        </button>
+        </a>
       </div>
     </motion.header>
   );

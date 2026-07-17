@@ -26,7 +26,7 @@ const ParallaxHeading = ({ word1, word2, metaLeft, metaRight }) => {
         {metaRight}
       </div>
 
-      <div className="flex flex-col items-center justify-center w-full leading-none font-bold select-none" style={{ fontSize: 'clamp(4rem, 15vw, 15rem)' }}>
+      <div className="flex flex-col items-center justify-center w-full leading-none font-bold select-none" style={{ fontSize: 'clamp(2.5rem, 12vw, 15rem)' }}>
         <motion.div 
           style={{ x: x1 }}
           className="text-[#C3FFFC] whitespace-nowrap -mb-[2%]"

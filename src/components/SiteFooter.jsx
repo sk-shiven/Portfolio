@@ -2,7 +2,7 @@ import React from 'react';
 
 const SiteFooter = () => {
   return (
-    <footer className="w-full bg-background pt-16 px-4 sm:px-8 border-t border-zinc-900 pb-8">
+    <footer className="w-full bg-background pt-16 px-4 sm:px-8 border-t border-zinc-900 pb-16 md:pb-8">
       <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-32">
         <div className="flex justify-between items-center font-mono text-xs tracking-widest uppercase text-zinc-500">
           <span>© 2026 SHIVEN KATHURIA</span>
